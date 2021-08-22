@@ -6,7 +6,7 @@ const NavBar = () => {
         <div className="nav">
            
                 
-                    <NavLink exact to="/" className="enlace">Home</NavLink>
+                    <NavLink exact to="/home" className="enlace">Home</NavLink>
                 
                 
                     <NavLink exact to="/detalle/:id" className="enlace">Detalle de VideoJuego</NavLink>
