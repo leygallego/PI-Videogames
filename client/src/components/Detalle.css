@@ -1,0 +1,21 @@
+.principal {
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+.detalle {
+    width: 30%;
+}
+
+.imagen {
+    width: 70%;
+    
+    
+}
+
+img{
+    width: 50%;
+    height: 100%;
+}

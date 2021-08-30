@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { getId } from './actions';
+import './Detalle.css'
 
 
 function Detalle() {
@@ -30,14 +31,18 @@ function Detalle() {
 
 
     return (
-        <div>
-            <h1>Aquí va el detalle</h1>
-            <h1>{id}</h1>
-            <h1>{detalle.nombre}</h1>
-            <h1>{detalle.descripcion}</h1>
-            <h1>{detalle.fechaLanzamiento}</h1>
-            <h1>{detalle.rating}</h1>
-            <img src={detalle.vgImagen} alt='imagen videojuego' />
+        <div className="principal">
+            <div className="detalle">
+                {/* <h1>{id}</h1> */}
+                <h1>{detalle.nombre}</h1>
+                <h2>{detalle.descripcion}</h2>
+                <h3>{detalle.fechaLanzamiento}</h3>
+                {/* <h3>{detalle.plataformas}</h3> */}
+                <h3>{detalle.rating}</h3>
+            </div>
+            <div className="imagen">
+                <img src={detalle.vgImagen} alt= {`imagen ${detalle.nombre}`} />
+            </div>
 
 
         </div>

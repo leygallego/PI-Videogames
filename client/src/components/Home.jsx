@@ -1,5 +1,8 @@
 import React from 'react';
 import Videojuegos from './Videojuegos';
+import './Search.css';
+import Search from './Search';
+import './Home.css';
 
 
 
@@ -10,17 +13,23 @@ function Home() {
     return (
        <div>
            
-               {/* {selector.map((ele, index)=>{
-                    return(
-                        <li key={index}>
-                            {ele.nombre}
-                        
-                        </li>
-                    )
-               })} */}
+              
                <h1>VIDEOJUEGOS</h1>
 
-                <Videojuegos />
+                    <div className="main">
+
+                        <div className="areaBusqueda">
+                            <Search />
+                        </div>
+
+                        <div className="areaVideogames">
+                            <Videojuegos />
+                        </div>
+
+                    </div>
+
+                    
+
 
            
        </div> 

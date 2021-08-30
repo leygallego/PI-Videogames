@@ -3,7 +3,9 @@ import axios from 'axios';
 
 export const GET_VIDEOGAMES = 'GET_VIDEOGAMES';
 export const GET_ID = 'GET_ID';
-export const ADD_VIDEOGAME ='ADD_VIDEOGAME'
+export const ADD_VIDEOGAME ='ADD_VIDEOGAME';
+export const GET_ALL_SERVER = 'GET_ALL_SERVER';
+export const GET_ALL = 'GET_ALL';
 
 
 
@@ -36,4 +38,19 @@ export const addVideoGame = (payload)=>{
     }
 
 
+}
+
+export const getAll = ()=>{
+
+
+    return (dispatch)=>{
+       
+        return axios.get('http://localhost:3001/videogame/')
+        .then(response =>{
+            response = dispatch({
+                type: GET_ALL,
+                payload: response.data
+            })
+        })
+    }
 }

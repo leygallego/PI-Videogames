@@ -1,0 +1,12 @@
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.areaBusqueda {
+    width: 30%;
+}
+
+.areaVideogames {
+    width: 70%;
+}

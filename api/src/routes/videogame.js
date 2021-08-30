@@ -2,7 +2,9 @@ const server = require("express").Router();
 const { Videogame, Genero } = require('../db')
 const axios = require('axios')
 var Sequelize = require("sequelize");
-const base = "https://api.rawg.io/api/games?key=1754cb599cff47f19f9ea015e1d2b722"
+const {API_KEY} = process.env;
+
+const base = `https://api.rawg.io/api/games?key=${API_KEY}`
 
 server.get("/", (req, res, next) => {
 
@@ -20,8 +22,8 @@ server.get("/", (req, res, next) => {
         ],
       },
     })
-      .then((posts) => {
-        res.json(posts);
+      .then((vg) => {
+        res.json(vg);
       })
       .catch(next);
     }
