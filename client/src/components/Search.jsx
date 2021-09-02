@@ -5,7 +5,7 @@ import { getAll } from './actions';
 
 function Search() {
 
-    const [juegos, setJuegos] = useState();
+    // const [juegos, setJuegos] = useState();
 
 
     const dispatch = useDispatch();
@@ -31,7 +31,7 @@ function Search() {
             <select>
                 <option value="action">Acción </option>
                 <option value="shooter">Tirador</option>
-                <option selected value="adventure">Aventura</option>
+                <option value="adventure">Aventura</option>
                 <option value="sports">Deportes</option>
             </select>
 
@@ -40,7 +40,21 @@ function Search() {
         <input type="text" placeholder="Busca videojuego por nombre, género" onChange={(e)=>{handleOnChange(e)}}/>
         <input type="button" value='Z-A' />
         <div>
-            {games ? games.map(el=>{
+
+                {
+                    games.map(el=>{
+                        if(el.nombre.includes(busqueda)){
+                            return(
+                                <Link key={el.id} to={`/detalle/${el.id}`} >
+                                            <div key={el.id}>
+                                             {el.nombre}  
+                                            </div>
+                                            </Link>
+                            )
+                        }
+                    })
+                }            
+            {/* {games ? games.map(el=>{
                 if (el.nombre.includes(busqueda)) {
                     return (
                         <Link key={el.id} to={`/detalle/${el.id}`} >
@@ -51,7 +65,7 @@ function Search() {
                     )
                 }
                 
-            }) : <div></div> } 
+            }) : <div></div> }  */}
         </div>
         </div>
     )
